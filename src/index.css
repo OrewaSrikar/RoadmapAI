@@ -6,12 +6,23 @@
   --color-on-surface-variant: #94a3b8;
   --color-primary: #6366f1;
   --color-primary-hover: #4f46e5;
+  --color-secondary: #06b6d4;
+  --color-tertiary: #a855f7;
+  --color-on-primary: #ffffff;
+  --color-surface-container-lowest: #070a13;
   
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-xxl: 3rem;
+  --spacing-xl: 2.5rem;
+  --spacing-xxl: 4rem;
+  --spacing-container-max: 80rem;
+
+  --max-width-sm: 24rem;
+  --max-width-md: 28rem;
+  --max-width-lg: 32rem;
+  --max-width-xl: 36rem;
+  --max-width-container-max: 80rem;
   
   --font-sans: 'Inter', sans-serif;
   --font-headline: 'Outfit', sans-serif;
@@ -21,6 +32,97 @@
   
   --font-headline-lg: 'Outfit', sans-serif;
   --font-body-sm: 'Inter', sans-serif;
+}
+
+@layer utilities {
+  .hero-glow {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.15) 0%, rgba(6, 182, 212, 0.05) 40%, rgba(11, 15, 25, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .font-label-caps {
+    font-family: var(--font-headline);
+    font-weight: 600;
+    letter-spacing: 0.075em;
+  }
+
+  .text-label-caps {
+    font-size: 0.75rem;
+  }
+
+  .font-headline-xl {
+    font-family: var(--font-headline);
+    font-weight: 800;
+  }
+
+  .text-headline-xl {
+    font-size: 2.75rem;
+    @media (min-width: 768px) {
+      font-size: 4rem;
+    }
+  }
+
+  .font-headline-lg {
+    font-family: var(--font-headline);
+  }
+
+  .text-headline-lg-mobile {
+    font-size: 2.25rem;
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+    }
+  }
+
+  .font-body-md {
+    font-family: var(--font-sans);
+  }
+
+  .text-body-md {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .delay-1000 {
+    animation-delay: 1.5s;
+  }
+
+  .ai-insight-border {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
 }
 
 @layer base {

@@ -1,13 +1,18 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
+import Hero from '../components/Hero'
+import Features from '../components/Features'
+import Footer from '../components/Footer'
+import AtmosphereBackground from '../components/AtmosphereBackground'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-surface text-on-surface">
+    <div className="min-h-screen bg-surface text-on-surface selection:bg-primary/30 selection:text-white relative">
       <Navbar />
-      <main className="pt-24 px-md md:px-lg max-w-7xl mx-auto">
-
-      </main>
+      <Hero />
+      <Features />
+      <Footer />
+      <AtmosphereBackground />
     </div>
   )
 }
